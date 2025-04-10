@@ -1,0 +1,82 @@
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 6rem;
+  background-color: linear-gradient(
+    rgba(26, 70, 116, 0.9),
+    rgba(76, 175, 80, 0.8)
+  ), url("https://indoreinstitute.com/wp-content/uploads/2021/09/pharmaceutical-industry.jpg");
+  min-height: 80vh;
+}
+
+.hero-left {
+  flex: 1;
+  padding-right: 4rem;
+}
+
+.hero-left h1 {
+  font-size: 3.5rem;
+  color: #1a4674;
+  margin-bottom: 1rem;
+}
+
+.hero-left h3 {
+  font-size: 1.8rem;
+  color: #4CAF50;
+  margin-bottom: 1.5rem;
+}
+
+.hero-left p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+}
+
+.hero-right {
+  flex: 1;
+}
+
+.hero-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1.5rem;
+  }
+}

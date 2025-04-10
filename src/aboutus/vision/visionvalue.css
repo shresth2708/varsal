@@ -1,0 +1,125 @@
+.vision-container {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+}
+
+.vision-section,
+.mission-section {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.vision-section:hover,
+.mission-section:hover {
+  transform: translateY(-5px);
+}
+
+.section-icon {
+  font-size: 3rem;
+  color: #1a4674;
+  margin-bottom: 1.5rem;
+}
+
+.vision-content,
+.mission-content {
+  text-align: center;
+}
+
+.vision-content h2,
+.mission-content h2 {
+  color: #1a4674;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.vision-content p,
+.mission-content p {
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.values-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.values-section h2 {
+  color: #1a4674;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #1a4674, #4CAF50);
+  color: white;
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  margin-bottom: 1.5rem;
+}
+
+.value-card:hover .value-icon {
+  color: white;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1a4674;
+}
+
+.value-card:hover h3 {
+  color: white;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.value-card:hover p {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .vision-container {
+    padding: 2rem 1rem;
+  }
+
+  .vision-section,
+  .mission-section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
