@@ -28,7 +28,6 @@ const Footer = () => {
             <li><a href="/financial">Financials</a></li>
             <li><a href="/report">Annual Reports</a></li>
             <li><a href="/shareholder">Shareholders</a></li>
-            <li><a href="/B2B">Business to Business</a></li>
           </ul>
         </div>
 
@@ -38,7 +37,6 @@ const Footer = () => {
             <li><a href="/services">Health Services</a></li>
             <li><a href="/partner">Partner with us</a></li>
             <li><a href="/adverse">Adverse Events</a></li>
-            <li><a href="/insurance">Insurance</a></li>
             <li><a href="/contact">Contact us</a></li>
           </ul>
         </div>

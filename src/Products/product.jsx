@@ -1,13 +1,13 @@
 import React from 'react'
 
 import ProductHero from './hero/heropro'
-import Navbar from '../Components/navbar/navbar'
+import HealthServices from './healthservices/services'
 
 const Product = () => {
   return (
     <div>
-      
       <ProductHero />
+      <HealthServices />
     </div>
   )
 }

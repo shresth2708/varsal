@@ -1,0 +1,114 @@
+.shareholder-container {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+}
+
+.shareholder-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.shareholder-header h1 {
+  color: #1a4674;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ownership-structure,
+.dividend-section,
+.events-section {
+  margin-bottom: 4rem;
+}
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.structure-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.percentage-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #4CAF50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.dividend-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dividend-table th,
+.dividend-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.dividend-table th {
+  background: #1a4674;
+  color: white;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+  color: #1a4674;
+  margin-bottom: 1rem;
+}
+
+.event-card p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+h2 {
+  color: #1a4674;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .shareholder-container {
+    padding: 2rem 1rem;
+  }
+  
+  .structure-grid,
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+}
