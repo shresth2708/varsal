@@ -2,68 +2,109 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 6rem;
-  background-color: linear-gradient(
-    rgba(26, 70, 116, 0.9),
-    rgba(76, 175, 80, 0.8)
-  ), url("https://indoreinstitute.com/wp-content/uploads/2021/09/pharmaceutical-industry.jpg");
+  padding: 6rem;
+  background: linear-gradient(135deg, rgba(26, 70, 116, 0.95), rgba(76, 175, 80, 0.85));
   min-height: 80vh;
+  position: relative;
+  color: var(--white);
 }
 
 .hero-left {
   flex: 1;
   padding-right: 4rem;
+  animation: fadeInLeft 1s ease-out;
 }
 
 .hero-left h1 {
   font-size: 3.5rem;
-  color: #1a4674;
+  color: var(--white);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero-left h3 {
   font-size: 1.8rem;
-  color: #4CAF50;
+  color: var(--white);
   margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .hero-left p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--white);
   line-height: 1.6;
   margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
 }
 
 .cta-button {
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  background-color: #4CAF50;
-  color: white;
+  background-color: var(--white);
+  color: var(--primary-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .cta-button:hover {
-  background-color: #45a049;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-right {
   flex: 1;
+  animation: fadeInRight 1s ease-out;
 }
 
 .hero-right img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    padding: 4rem;
+  }
+  
+  .hero-left h1 {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
   }
 
@@ -78,5 +119,9 @@
 
   .hero-left h3 {
     font-size: 1.5rem;
+  }
+  
+  .hero-left p {
+    margin: 0 auto 2rem;
   }
 }

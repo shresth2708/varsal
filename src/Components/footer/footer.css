@@ -1,101 +1,465 @@
-.pharmacy-footer {
-  background-color: #1a4674;
-  color: white;
-  padding: 40px 0 20px;
+/* Enhanced animations & effects for footer */
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.footer-container {
-  max-width: 1200px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }
+  75% { transform: translateY(5px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(76, 175, 80, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.6); }
+}
+
+.pharmacy-footer {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  width: 100%;
+  font-family: var(--font-main);
+  animation: fadeIn 0.8s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative wave effect at the top of footer */
+.pharmacy-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, 
+    var(--primary-color), 
+    var(--secondary-color),
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  background-size: 300% 100%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Footer top section with brand info */
+.footer-top {
+  background-color: var(--primary-color);
+  padding: 3rem 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  position: relative;
+}
+
+/* Animated dots for decorative effect */
+.footer-top::after {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(var(--secondary-light) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.3;
+  animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 600px;
   margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out 0.2s forwards;
+}
+
+.footer-brand h2 {
+  color: var(--white);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Animated underline for footer brand title */
+.footer-brand h2::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-color);
+  transition: width 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-brand:hover h2::after {
+  width: 80px;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+/* Enhanced social icons styling */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays for social icons */
+.social-icons a:nth-child(1) { animation-delay: 0.6s; }
+.social-icons a:nth-child(2) { animation-delay: 0.7s; }
+.social-icons a:nth-child(3) { animation-delay: 0.8s; }
+.social-icons a:nth-child(4) { animation-delay: 0.9s; }
+
+/* Enhanced hover effect with ripple */
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.social-icons a:hover {
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icons a:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Footer main section with links */
+.footer-main {
+  background-color: var(--primary-dark);
+  padding: 4rem 0 3rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+  position: relative;
+}
+
+.footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 7.5rem;
 }
 
 .footer-section {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+
+.footer-section h1 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .footer-section h4 {
-  color: #4CAF50;
-  margin-bottom: 15px;
-  font-size: 18px;
+  color: var(--secondary-light);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  display: inline-block;
+  position: relative;
+}
+
+.footer-section ul li a:hover {
+  color: var(--secondary-light);
+  transform: translateX(5px);
 }
 
 .footer-section a {
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
+  position: relative;
+  padding-left: 0;
 }
 
 .footer-section a:hover {
-  color: #4CAF50;
+  color: var(--secondary-color);
+  padding-left: 5px;
+}
+
+/* Contact info styling */
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-icon {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Newsletter section */
+.newsletter-section {
+  grid-column: span 2;
+}
+
+.newsletter-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.2rem;
 }
 
 .newsletter-form {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 0.5rem;
 }
 
 .newsletter-form input {
-  padding: 8px;
-  border-radius: 4px;
+  flex: 1;
+  padding: 0.8rem 1rem;
   border: none;
-  flex-grow: 1;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-family: var(--font-main);
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .newsletter-form button {
-  padding: 8px 15px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--white);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .newsletter-form button:hover {
-  background-color: #45a049;
+  background-color: var(--secondary-light);
+  transform: translateY(-2px);
 }
 
 .footer-bottom {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .footer-links {
-  margin-top: 10px;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .footer-links a {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
   text-decoration: none;
-  margin: 0 10px;
+  transition: color var(--transition-normal);
 }
 
 .footer-links a:hover {
-  color: #4CAF50;
+  color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .newsletter-section {
+    grid-column: auto;
+  }
+  
+  .footer-grid {
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .pharmacy-footer {
+    padding: 3rem 1rem 1rem;
+  }
+  
+  .footer-top {
+    padding: 2.5rem 1rem;
+  }
+  
+  .footer-main {
+    padding: 3rem 1rem 2rem;
+  }
+  
   .footer-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
   }
   
   .newsletter-form {
     flex-direction: column;
+  }
+  
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
   }
 }
