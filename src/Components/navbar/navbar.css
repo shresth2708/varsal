@@ -133,3 +133,60 @@
   animation: slideDown 0.3s ease forwards;
 }
 
+/* Add to existing navbar.css */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1a4674;
+  min-width: 200px;
+  padding: 1rem 0;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    background: rgba(255,255,255,0.1);
+    min-width: 100%;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  .dropdown-menu li {
+    padding: 0;
+  }
+}

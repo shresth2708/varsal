@@ -8,9 +8,9 @@
   width: 100vw;  /* Full viewport width */
   min-height: 100vh; /* Full viewport height */
   background: linear-gradient(135deg, 
-    rgba(26, 70, 116, 0.9), 
-    rgba(76, 175, 80, 0.9)
-  ),url('../assets/pharmacy-background.jpg');
+    rgba(155, 196, 240, 0.9), 
+    rgba(216, 246, 247, 0.9)
+  ),url('../../assets/images/Contact.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
