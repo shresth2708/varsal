@@ -1,6 +1,7 @@
 import React from 'react';
 import './hero.css';
 // import PharmacyImage from '../assets/pharmacy-image.jpg'; // Add your image path
+import back3 from '../../assets/images/back3.jpeg'; // Add your image path
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
       </div>
       
       <div className="hero-right">
-        <img src="" alt="PharmaMed Store" />
+        <img src={back3} alt="PharmaMed Store" />
       </div>
     </div>
   );

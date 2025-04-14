@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6rem;
-  background: linear-gradient(135deg, rgba(26, 70, 116, 0.95), rgba(76, 175, 80, 0.85));
+  padding: 4rem 6rem;
+  background-color: linear-gradient(
+    rgba(26, 70, 116, 0.9),
+    rgba(76, 175, 80, 0.8)
+  ), url("https://indoreinstitute.com/wp-content/uploads/2021/09/pharmaceutical-industry.jpg");
   min-height: 80vh;
-  position: relative;
-  color: var(--white);
 }
 
 .hero-left {
@@ -123,5 +124,17 @@
   
   .hero-left p {
     margin: 0 auto 2rem;
+  }
+}
+
+@keyframes gradientTransition {
+  0% {
+    background-blend-mode: overlay, normal, normal;
+  }
+  50% {
+    background-blend-mode: soft-light, overlay, normal;
+  }
+  100% {
+    background-blend-mode: overlay, normal, normal;
   }
 }
