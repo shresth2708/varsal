@@ -8,6 +8,7 @@ import Product from './Products/product.jsx';
 import Contact from './contact/contact1.jsx';
 import AboutUs from './aboutus/about.jsx';
 import Investor from './investors/investors1.jsx';
+import ScrollToTop from './Components/ScrollToTop'; // Import the new component
 
 function App() {
   // Add this to ensure proper rendering of full page content
@@ -22,8 +23,8 @@ function App() {
   
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* Add this component inside BrowserRouter */}
       <Navbar />
-      {/* Removed Search component that was causing errors */}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

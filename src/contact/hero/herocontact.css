@@ -8,8 +8,8 @@
   width: 100vw;  /* Full viewport width */
   min-height: 100vh; /* Full viewport height */
   background: linear-gradient(135deg, 
-    rgba(155, 196, 240, 0.9), 
-    rgba(216, 246, 247, 0.9)
+    rgba(0, 121, 107, 0.9), 
+    rgba(72, 169, 153, 0.9)
   ),url('../../assets/images/Contact.jpg');
   background-size: cover;
   background-position: center;
@@ -67,7 +67,7 @@
 .contact-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #4CAF50;
+  color: var(--secondary-color);
 }
 
 .contact-card h3 {

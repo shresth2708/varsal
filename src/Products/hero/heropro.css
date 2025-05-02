@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   padding: 5rem 6rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
   color: var(--white);
 }
 
